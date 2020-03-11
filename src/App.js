@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import ReminderList from "./ReminderList";
 import ReminderItems from "./ReminderItems";
-import "./fire"
+import fire from "./fire";
 import "./App.css";
 
 class App extends Component {
@@ -28,9 +28,21 @@ class App extends Component {
       currentItem
     });
   };
+
+  componentWillMount(){
+    /* Create reference to messages in Firebase Database */
+    let reminderRef = fire.database().ref('reminder').orderByKey().limitToLast(100);
+    reminderRef.on('child_added', snapshot => {
+      /* Update React state when message is added at Firebase Database */
+      let reminder = { text: snapshot.val(), id: snapshot.key };
+      this.setState({ messages: [message].concat(this.state.messages) });
+    })
+  }
+
   addItem = e => {
     e.preventDefault();
-    
+    fire.database().ref('reminder').push( this.inputEl.value );
+    this.inputEl.value = ''; // <- clear the input
     const newItem = this.state.currentItem;
 
     if (newItem.text !== "") {
