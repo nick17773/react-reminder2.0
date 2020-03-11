@@ -54,7 +54,7 @@ class App extends Component {
       items: filteredItems
     });
   };
-
+  
   render() {
     return (
       <div className="App">
