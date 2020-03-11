@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import ReminderList from "./ReminderList";
 import ReminderItems from "./ReminderItems";
-
+import "./fire"
 import "./App.css";
 
 class App extends Component {
@@ -30,7 +30,7 @@ class App extends Component {
   };
   addItem = e => {
     e.preventDefault();
-
+    
     const newItem = this.state.currentItem;
 
     if (newItem.text !== "") {
