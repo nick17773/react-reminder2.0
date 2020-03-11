@@ -40,8 +40,8 @@ class ReminderList extends Component {
             this.props.handleInput
             }
             /> 
-            <button type = "submit" > Add Reminder < /button> 
-            </form >
+            <button type = "submit" > Add Reminder </button> 
+            </form>
             <br/>
         </div>
         ) 

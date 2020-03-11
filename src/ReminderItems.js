@@ -21,17 +21,16 @@ class ReminderItems extends Component {
             } 
             
 
-<
-            /li>
+        </li>
             
         )
     }
     render() {
         const reminderEntries = this.props.entries
         const listItems = reminderEntries.map(this.createTasks)
-        return <ul className = "theList" > {
+        return <ul className = "theList"> {
             listItems
-        } < /ul>
+        } </ul>
     }
 }
 export default ReminderItems
