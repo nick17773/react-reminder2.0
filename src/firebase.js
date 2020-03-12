@@ -1,4 +1,6 @@
-import firebase from "firebase";
+import firebase from 'firebase/app';
+import 'firebase/database';
+
 var config = { /* COPY THE ACTUAL CONFIG FROM FIREBASE CONSOLE */
   apiKey: "AIzaSyAIae2xJEZMbIyaTQ2ht4CnI0UHbJtL6fI",
   authDomain: "https://react-reminder-2.firebaseapp.com/?80876",
