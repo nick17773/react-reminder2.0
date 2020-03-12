@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import fire from './firebase.js';
+import firebase from './firebase.js';
 
 class App extends Component {
   constructor() {
