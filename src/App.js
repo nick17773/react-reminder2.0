@@ -11,12 +11,11 @@ class App extends Component {
       username: "",
       description: "",
       items: [],
-      user: null
+      
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.login = this.login.bind(this);
-    this.logout = this.logout.bind(this);
+    
   }
   handleChange(e) {
     this.setState({
@@ -24,21 +23,7 @@ class App extends Component {
     });
   }
 
-  logout() {
-    auth.signOut().then(() => {
-      this.setState({
-        user: null
-      });
-    });
-  }
-  login() {
-    auth.signInWithPopup(provider).then(result => {
-      const user = result.user;
-      this.setState({
-        user
-      });
-    });
-  }
+  
 
   handleSubmit(e) {
     e.preventDefault();
@@ -87,11 +72,7 @@ class App extends Component {
         <header>
           <div className="wrapper">
             <h1>Reminders</h1>
-            {this.state.user ? (
-              <button onClick={this.logout}>Log Out</button>
-            ) : (
-              <button onClick={this.login}>Log In</button>
-            )}
+           
           </div>
         </header>
         <div className="container">
