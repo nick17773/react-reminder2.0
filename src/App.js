@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "./App.css";
-import firebase from "./firebase.js";
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import firebase, { auth, provider } from "./firebase.js";
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 class App extends Component {
   constructor() {
@@ -9,30 +9,57 @@ class App extends Component {
     this.state = {
       currentItem: "",
       username: "",
-      items: []
+      description: "",
+      items: [],
+      user: null
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.login = this.login.bind(this);
+    this.logout = this.logout.bind(this);
   }
   handleChange(e) {
     this.setState({
       [e.target.name]: e.target.value
     });
   }
+
+  logout() {
+    auth.signOut().then(() => {
+      this.setState({
+        user: null
+      });
+    });
+  }
+  login() {
+    auth.signInWithPopup(provider).then(result => {
+      const user = result.user;
+      this.setState({
+        user
+      });
+    });
+  }
+
   handleSubmit(e) {
     e.preventDefault();
     const itemsRef = firebase.database().ref("items");
     const item = {
       title: this.state.currentItem,
-      user: this.state.username
+      user: this.state.username,
+      description: this.state.description
     };
     itemsRef.push(item);
     this.setState({
       currentItem: "",
-      username: ""
+      username: "",
+      description: ""
     });
   }
   componentDidMount() {
+    auth.onAuthStateChanged((user) => {
+    if (user) {
+      this.setState({ user });
+    } });
     const itemsRef = firebase.database().ref("items");
     itemsRef.on("value", snapshot => {
       let items = snapshot.val();
@@ -41,7 +68,8 @@ class App extends Component {
         newState.push({
           id: item,
           title: items[item].title,
-          user: items[item].user
+          user: items[item].user,
+          description: items[item].description
         });
       }
       this.setState({
@@ -59,11 +87,17 @@ class App extends Component {
         <header>
           <div className="wrapper">
             <h1>Reminders</h1>
+            {this.state.user ? (
+              <button onClick={this.logout}>Log Out</button>
+            ) : (
+              <button onClick={this.login}>Log In</button>
+            )}
           </div>
         </header>
         <div className="container">
           <section className="add-item">
             <form onSubmit={this.handleSubmit}>
+              <p>What is your Reminder?</p>
               <input
                 type="text"
                 name="username"
@@ -71,6 +105,15 @@ class App extends Component {
                 onChange={this.handleChange}
                 value={this.state.username}
               />
+
+              <input
+                type="text"
+                name="description"
+                placeholder="Enter Brief Description here"
+                onChange={this.handleChange}
+                value={this.state.description}
+              />
+              <p>When is it due</p>
               <input
                 type="date"
                 name="currentItem"
@@ -90,6 +133,8 @@ class App extends Component {
                       <h3>{item.user}</h3>
                       <p>
                         Due by: {item.title}
+                        <br />
+                        {item.description}
                         <button onClick={() => this.removeItem(item.id)}>
                           Remove Item
                         </button>
