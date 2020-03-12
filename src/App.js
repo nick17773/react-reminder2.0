@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import logo from "./logo.svg";
 import "./App.css";
 import firebase from "./firebase.js";
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
@@ -59,7 +58,7 @@ class App extends Component {
       <div className="app">
         <header>
           <div className="wrapper">
-            <h1>Fun Food Friends</h1>
+            <h1>Reminders</h1>
           </div>
         </header>
         <div className="container">
@@ -73,7 +72,7 @@ class App extends Component {
                 value={this.state.username}
               />
               <input
-                type="text"
+                type="date"
                 name="currentItem"
                 placeholder="When is it due?"
                 onChange={this.handleChange}
@@ -88,9 +87,9 @@ class App extends Component {
                 {this.state.items.map(item => {
                   return (
                     <li key={item.id}>
-                      <h3>{item.title}</h3>
+                      <h3>{item.user}</h3>
                       <p>
-                        brought by: {item.user}
+                        Due by: {item.title}
                         <button onClick={() => this.removeItem(item.id)}>
                           Remove Item
                         </button>
