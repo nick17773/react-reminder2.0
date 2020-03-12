@@ -1,80 +1,94 @@
-import React, { Component } from "react";
-import ReminderList from "./ReminderList";
-import ReminderItems from "./ReminderItems";
-import fire from "./fire";
-import "./App.css";
+import React, { Component } from 'react';
 
-class App extends Component {
+import './App.css';
+import firebase from './firebase';
+
+class ReminderFix extends Component {
   constructor() {
     super();
     this.state = {
-      items: [],
-      currentItem: {
-        text: "",
-        key: ""
-      }
-    };
-  }
-  handleInput = e => {
-    var date = new Date(Date.now());
-
-    const itemText = e.target.value;
-    const currentItem = {
-      text: itemText,
-      key: Date.now(),
-      date: Intl.DateTimeFormat("en-GB").format(date)
-    };
-    this.setState({
-      currentItem
-    });
-  };
-
-  
-  addItem = e => {
-    e.preventDefault();
-    
-    const newItem = this.state.currentItem;
-
-    if (newItem.text !== "") {
-      console.log(newItem);
-
-      const items = [...this.state.items, newItem];
-      this.setState({
-        items: items,
-        currentItem: {
-          text: "",
-          key: ""
-        }
-      });
+      currentItem: '',
+      username: '',
+      items: []
     }
-  };
-  deleteItem = key => {
-    const filteredItems = this.state.items.filter(item => {
-      return item.key !== key;
-    });
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+  handleChange(e) {
     this.setState({
-      items: filteredItems
+      [e.target.name]: e.target.value
     });
-  };
-  
+  }
+  handleSubmit(e) {
+    e.preventDefault();
+    const itemsRef = firebase.database().ref('items');
+    const item = {
+      title: this.state.currentItem,
+      user: this.state.username
+    }
+    itemsRef.push(item);
+    this.setState({
+      currentItem: '',
+      username: ''
+    });
+  }
+  componentDidMount() {
+    const itemsRef = firebase.database().ref('items');
+    itemsRef.on('value', (snapshot) => {
+      let items = snapshot.val();
+      let newState = [];
+      for (let item in items) {
+        newState.push({
+          id: item,
+          title: items[item].title,
+          user: items[item].user
+        });
+      }
+      this.setState({
+        items: newState
+      });
+    });
+  }
+  removeItem(itemId) {
+    const itemRef = firebase.database().ref(`/items/${itemId}`);
+    itemRef.remove();
+  }
   render() {
     return (
-      <div className="App">
-        <ReminderList
-          timeStamp={this.state.date}
-          addItem={this.addItem}
-          inputElement={this.inputElement}
-          handleInput={this.handleInput}
-          currentItem={this.state.currentItem}
-          saveItem={this.state.saveItem}
-        />
-        <ReminderItems
-          entries={this.state.items}
-          deleteItem={this.deleteItem}
-        />
+      <div className='app'>
+        <header>
+            <div className="wrapper">
+              <h1>Fun Food Friends</h1>
+                             
+            </div>
+        </header>
+        <div className='container'>
+          <section className='add-item'>
+                <form onSubmit={this.handleSubmit}>
+                  <input type="text" name="username" placeholder="What's your name?" onChange={this.handleChange} value={this.state.username} />
+                  <input type="text" name="currentItem" placeholder="What are you bringing?" onChange={this.handleChange} value={this.state.currentItem} />
+                  <button>Add Item</button>
+                </form>
+          </section>
+          <section className='display-item'>
+              <div className="wrapper">
+                <ul>
+                  {this.state.items.map((item) => {
+                    return (
+                      <li key={item.id}>
+                        <h3>{item.title}</h3>
+                        <p>brought by: {item.user}
+                          <button onClick={() => this.removeItem(item.id)}>Remove Item</button>
+                        </p>
+                      </li>
+                    )
+                  })}
+                </ul>
+              </div>
+          </section>
+        </div>
       </div>
     );
   }
 }
-
-export default App;
+export default ReminderFix;

@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import './App.css';
 import firebase from './firebase.js';
 
-class App extends Component {
+class ReminderFix extends Component {
   constructor() {
     super();
     this.state = {
@@ -91,4 +91,4 @@ class App extends Component {
     );
   }
 }
-export default App;
+export default ReminderFix;
