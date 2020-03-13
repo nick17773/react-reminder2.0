@@ -1,7 +1,5 @@
-# react-zbdong
-E
-
-asjfkdsdajfklsadjfas;jflasdjfksadjfas;dfjask;jflksdajfslkadjfksa;;jflka;sjkfsda;jfsajfsadj;sadjflka;sdjflksadjflsa;djflkdsajflkdasf;jlask;dfjsalkdjfvenaeowicmerivewcihaasocmegafjsdfvnroesdajfkldsljfkalsjfklsadfpooholesdjfklsdajklfjadsklhjkgdfkjhfasdfkjlasdjkl;fj;skdjlkfasjflksdajflsdajkghiajfoechaiojfkadsfjklajghajfklasdjkljaeakahgksadfhjkldsjaklfjsadklfjasd;jflksdajfklsdajfklsdajfklsdajfklsdajfjsdlkjgilessuxklsjfkl;sadfjklsadjflksad;jfskad;fjsalkd;jlkfsadjklfsdajfklsdajkfjsadklfjksldajfklsdajfklsadjflkasjflksjadkfls;jdafkljsdlkfsjdalk;jlsakd;jfklasdjfklasdjfklsdajf;lsa;djflskadjfslkadjflsakjfklsadjfklsdajf;asdjlfksadjfklsadjfklsdajfklasdjflksadjfklasdjfklasdjfklsadjfalsfjkasld;jfgjaeaoio
+# React Reminder App
+This is a reminder app created by Nicholas Russell, using Firebase and React.js.
 
 
 [Edit on StackBlitz ⚡️](https://stackblitz.com/edit/react-zbdoxg)
