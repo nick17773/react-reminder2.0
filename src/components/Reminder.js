@@ -10,20 +10,16 @@ class Reminder extends Component {
       currentItem: "",
       username: "",
       description: "",
-      items: [],
-      
+      items: []
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
-    
   }
   handleChange(e) {
     this.setState({
       [e.target.name]: e.target.value
     });
   }
-
-  
 
   handleSubmit(e) {
     e.preventDefault();
@@ -41,10 +37,11 @@ class Reminder extends Component {
     });
   }
   componentDidMount() {
-    auth.onAuthStateChanged((user) => {
-    if (user) {
-      this.setState({ user });
-    } });
+    auth.onAuthStateChanged(user => {
+      if (user) {
+        this.setState({ user });
+      }
+    });
     const itemsRef = firebase.database().ref("items");
     itemsRef.on("value", snapshot => {
       let items = snapshot.val();
@@ -72,7 +69,6 @@ class Reminder extends Component {
         <header>
           <div className="wrapper">
             <h1>Reminders</h1>
-           
           </div>
         </header>
         <div className="container">
@@ -98,7 +94,6 @@ class Reminder extends Component {
               <input
                 type="date"
                 name="currentItem"
-                
                 onChange={this.handleChange}
                 value={this.state.currentItem}
               />
@@ -114,6 +109,7 @@ class Reminder extends Component {
                       <h3>{item.user}</h3>
                       <p>
                         Due by: {item.title}
+                        <br />
                         <br />
                         {item.description}
                         <button onClick={() => this.removeItem(item.id)}>
