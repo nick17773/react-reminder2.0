@@ -3,7 +3,7 @@ import "./App.css";
 import firebase, { auth, provider } from "./firebase.js";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
-class App extends Component {
+class Reminder extends Component {
   constructor() {
     super();
     this.state = {
@@ -131,4 +131,4 @@ class App extends Component {
     );
   }
 }
-export default App;
+export default Reminder;
