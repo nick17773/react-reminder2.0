@@ -1,7 +1,7 @@
 import React from 'react';
  
 import { NavLink } from 'react-router-dom';
- 
+const ACTIVE = {background: '#FA6900', color: '#000'}
 const Navigation = () => {
     return (
        <div className="Nav">
