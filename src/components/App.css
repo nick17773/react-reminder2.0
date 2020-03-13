@@ -6,8 +6,10 @@
   margin: 1.03vh;
   padding: 1.03vh;
   width: 6.21vh;
+  max-width: 20vh;
   background-color: #103d5d;
   color: #fff;
+  
 }
 .Nav {
   margin-bottom: 1.55vh;
