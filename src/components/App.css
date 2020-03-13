@@ -3,11 +3,13 @@
 }
 .Nav a {
   border: 1px solid #555;
-  margin: 5px;
+  margin: 10px;
   padding: 10px;
   width: 60px;
 }
-
+.Nav {
+  margin: 10px;
+}
 
 
 body {
