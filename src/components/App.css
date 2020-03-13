@@ -112,7 +112,7 @@ ul {
 }
 
 li {
-  width: calc(50% - 5.17vh);
+  width: calc(30vh - 5.17vh);
   list-style-type: none;
   margin-right: 5.17vh;
   background-color: rgb(237, 237, 237);
