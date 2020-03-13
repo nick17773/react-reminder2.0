@@ -82,7 +82,7 @@ class Reminder extends Component {
               <input
                 type="text"
                 name="username"
-                placeholder="What do you want to remember"
+                placeholder="Reminder"
                 onChange={this.handleChange}
                 value={this.state.username}
               />
@@ -90,7 +90,7 @@ class Reminder extends Component {
               <input
                 type="text"
                 name="description"
-                placeholder="Enter Brief Description here"
+                placeholder="Description"
                 onChange={this.handleChange}
                 value={this.state.description}
               />
@@ -98,7 +98,7 @@ class Reminder extends Component {
               <input
                 type="date"
                 name="currentItem"
-                placeholder="When is it due?"
+                
                 onChange={this.handleChange}
                 value={this.state.currentItem}
               />
