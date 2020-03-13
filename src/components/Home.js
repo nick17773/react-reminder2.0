@@ -6,7 +6,10 @@ const home = () => {
        <header>
           <h1>Home</h1>
           </header>
-           <p>Home page body content</p>
+           <p>This is a home page, not much to see here.
+           <br/>
+           <br/>Please refer to the page REMINDERS to create a reminder
+           </p>
        </div>
     );
 }
