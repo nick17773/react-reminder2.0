@@ -1,5 +1,17 @@
+* {
+  font-family: 'B612';
+}
+.Nav {
+  display: block;
+  margin: 0;
+  padding: 0;
+  width: 60px;
+}
+
+
+
 body {
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'B612';
   background-color: #fff;
 }
 
@@ -131,4 +143,12 @@ button {
   font-size: 14px;
   box-shadow: 0 2px 5px 0 rgba(0,0,0,.26);
   padding: 10px 6px;
+}
+@font-face {
+    font-family: 'b612regular';
+    src: url('b612/b612-regular-webfont.woff2') format('woff2'),
+         url('b612/b612-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
 }
