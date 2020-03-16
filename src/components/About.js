@@ -9,7 +9,9 @@ const About = () => {
         </div>
       </header>
       <div className="container">
-        <p>About US page body content</p>
+        <section className="add-item">
+          <p>About US page body content</p>
+        </section>
       </div>
     </div>
   );

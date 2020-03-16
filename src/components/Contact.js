@@ -9,7 +9,9 @@ const Contact = () => {
           </div>
           </header>
           <div className="container">
+          <section className="add-item">
           <p>Contact US page body content</p>
+          </section>
           </div>
        </div>
     );

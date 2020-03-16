@@ -9,10 +9,12 @@ const home = () => {
           </div>
           </header>
           <div className="container">
+          <section className="add-item">
            <p>This is a home page, not much to see here.
            <br/>
            <br/>Please refer to the page REMINDERS to create a reminder
            </p>
+          </section>
            </div>
        </div>
     );
