@@ -13,6 +13,7 @@ const Navigation = () => {
           <NavLink to="/contact">Contact</NavLink>
           <NavLink to="/reminders">Reminders</NavLink>
           
+          
        </div>
     );
 }
