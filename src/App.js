@@ -8,7 +8,6 @@ import Contact from "./components/Contact";
 import Error from "./components/Error";
 import Navigation from "./components/Navigation";
 import Reminder from "./components/Reminder";
-import Register from "./components/Register";
 
 class App extends Component {
   render() {
@@ -22,7 +21,7 @@ class App extends Component {
             <Route path="/about" component={About} />
             <Route path="/reminders" component={Reminder} />
             <Route path="/contact" component={Contact} />
-            <Route path="/register" component={Register}/>
+            
             <Route component={Error} />
           </Switch>
         </div>
