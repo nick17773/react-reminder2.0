@@ -1,4 +1,5 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
  
 const home = () => {
     return (
@@ -12,7 +13,7 @@ const home = () => {
           <section className="add-item">
            <p>This is a home page, not much to see here.
            <br/>
-           <br/>Please refer to the page REMINDERS to create a reminder
+           <br/>Please refer to the page <NavLink to="/reminders">Reminders</NavLink> to create a reminder
            </p>
           </section>
            </div>
