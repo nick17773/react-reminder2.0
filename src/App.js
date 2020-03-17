@@ -13,9 +13,7 @@ import Reminder from "./components/Reminder";
 
 class App extends Component {
   render() {
-    const icon = () => {
-       <link rel="shorcut icon" href="/download.ico" />
-    }
+    
     return (
       <BrowserRouter>
         <div>
