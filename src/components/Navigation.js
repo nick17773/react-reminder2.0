@@ -7,6 +7,7 @@ const ACTIVE = {background: '#FA6900', color: '#fff'}
 {/* The nav bar function */}
 const Navigation = () => {
     return (
+      <div id="NavBg">
        <div className="Nav">
           <NavLink to="/">Home</NavLink>
           <NavLink to="/about">About</NavLink>
@@ -15,6 +16,7 @@ const Navigation = () => {
          
           
        </div>
+      </div>
     );
 }
  
