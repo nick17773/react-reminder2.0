@@ -1,5 +1,6 @@
 import React from "react";
 
+
 const About = () => {
   return (
     <div>
@@ -11,6 +12,7 @@ const About = () => {
       <div className="container">
         <section className="add-item">
           <p>About US page body content</p>
+          <img src="./download.png"/>
         </section>
       </div>
     </div>
