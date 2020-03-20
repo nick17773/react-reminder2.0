@@ -86,7 +86,7 @@ class Reminder extends Component {
                 onChange={this.handleChange}
                 value={this.state.description}
               />
-              <p>When is it due</p>
+              <p>When is it due?</p>
               <input
                 type="date"
                 name="currentItem"
