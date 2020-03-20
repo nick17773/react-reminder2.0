@@ -3,7 +3,7 @@
   "name": "Create React App Sample",
   "icons": [
     {
-      "src": "favicon.ico",
+      "src": "https://firebasestorage.googleapis.com/v0/b/react-reminder-2.appspot.com/o/download.ico?alt=media&token=df973d88-04b3-473e-b4c7-1d425fb43ac6",
       "sizes": "256x256 64x64 32x32 24x24 16x16",
       "type": "image/x-icon"
     },
