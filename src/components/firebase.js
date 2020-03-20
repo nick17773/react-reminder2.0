@@ -3,6 +3,7 @@ import 'firebase/database';
 import 'firebase/storage';
 import 'firebase/auth';
 
+
 var config = {
   apiKey: "AIzaSyAIae2xJEZMbIyaTQ2ht4CnI0UHbJtL6fI",
   authDomain: "react-reminder-2.firebaseapp.com",
@@ -14,5 +15,6 @@ var config = {
   measurementId: "G-TL7JX69EE6"
 };
 firebase.initializeApp(config);
+
 
 export default firebase;
