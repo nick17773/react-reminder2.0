@@ -12,6 +12,7 @@ const About = () => {
         <section className="add-item">
           <p>About US page body content</p>
           
+          
         </section>
       </div>
     </div>
