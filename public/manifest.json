@@ -11,7 +11,7 @@
     {
       "href": "https://firebasestorage.googleapis.com/v0/b/react-reminder-2.appspot.com/o/doom-logo.png?alt=media&token=602e07fa-6fe2-4850-949d-ded14a9bc970",
       "type": "image/png",
-      "sizes": "512x512"
+      "sizes": "256x256 64x64 32x32 24x24 16x16",
     }
   ],
   "start_url": ".",
