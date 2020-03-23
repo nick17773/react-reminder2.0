@@ -1,6 +1,6 @@
 {
-  "short_name": "React Reminder App",
-  "name": "Create React App Sample",
+  "short_name": "Reminder App",
+  "name": "React Reminder App",
   "icons": [
     {
       "href": "https://firebasestorage.googleapis.com/v0/b/react-reminder-2.appspot.com/o/slayersLogo.ico?alt=media&token=f4a933f6-a79e-42df-bd7b-bce92924794e",
