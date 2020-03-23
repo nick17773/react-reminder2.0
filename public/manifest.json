@@ -11,7 +11,7 @@
     {
       "href": "https://firebasestorage.googleapis.com/v0/b/react-reminder-2.appspot.com/o/checkmark-approve-check-512.png?alt=media&token=b9b2eec0-fcd0-41e0-80eb-fcecba178e3a",
       "type": "image/png",
-      "sizes": "512x512 256x256 64x64 32x32 24x24 16x16",
+      "sizes": "512x512 256x256 64x64 32x32 24x24 16x16"
     }
   ],
   "start_url": ".",
