@@ -13,7 +13,7 @@ const Contact = () => {
           <p>Here is my Documentation. Follow the link below to see it! 
           <br/>
           <br/>
-          <a href="https://docs.google.com/document/d/1gD-QA6CFuONBF4JU1lg80TdKnA3m-lW1f4OMnW-oKr4/edit">Documentation</a></p>
+          <a href="https://docs.google.com/document/d/1gD-QA6CFuONBF4JU1lg80TdKnA3m-lW1f4OMnW-oKr4/edit?usp=sharing">Documentation</a></p>
           
           
           </section>
