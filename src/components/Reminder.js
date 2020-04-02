@@ -10,6 +10,7 @@ class Reminder extends Component {
       currentItem: "",
       username: "",
       description: "",
+      time: "",
       items: []
     };
     this.handleChange = this.handleChange.bind(this);
@@ -27,13 +28,15 @@ class Reminder extends Component {
     const item = {
       title: this.state.currentItem,
       user: this.state.username,
-      description: this.state.description
+      description: this.state.description,
+      time: this.state.time,
     };
     itemsRef.push(item);
     this.setState({
       currentItem: "",
       username: "",
-      description: ""
+      description: "",
+      time: "",
     });
   }
   componentDidMount() {
@@ -47,7 +50,8 @@ class Reminder extends Component {
           id: item,
           title: items[item].title,
           user: items[item].user,
-          description: items[item].description
+          description: items[item].description,
+          time: items[item].time,
         });
       }
       this.setState({
@@ -93,6 +97,12 @@ class Reminder extends Component {
                 onChange={this.handleChange}
                 value={this.state.currentItem}
               />
+              <input
+                type="time"
+                name="time"
+                onChange={this.handleChange}
+                value={this.state.time}
+              />
               <button>Add Item</button>
             </form>
           </section>
@@ -104,7 +114,7 @@ class Reminder extends Component {
                     <li key={item.id}>
                       <h3>{item.user}</h3>
                       <p>
-                        Due by: {item.title}
+                        Due by: {item.title + item.time}
                         <br />
                         <br />
                         {item.description}
