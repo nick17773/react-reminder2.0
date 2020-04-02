@@ -26,21 +26,20 @@ class Reminder extends Component {
     e.preventDefault();
     const itemsRef = firebase.database().ref("items");
     const item = {
-      title: this.state.currentItem,
-      user: this.state.username,
+      date: this.state.currentItem,
+      title: this.state.username,
       description: this.state.description,
-      time: this.state.time,
+      time: this.state.time
     };
     itemsRef.push(item);
     this.setState({
       currentItem: "",
       username: "",
       description: "",
-      time: "",
+      time: ""
     });
   }
   componentDidMount() {
-    
     const itemsRef = firebase.database().ref("items");
     itemsRef.on("value", snapshot => {
       let items = snapshot.val();
@@ -48,10 +47,10 @@ class Reminder extends Component {
       for (let item in items) {
         newState.push({
           id: item,
+          date: items[item].date,
           title: items[item].title,
-          user: items[item].user,
           description: items[item].description,
-          time: items[item].time,
+          time: items[item].time
         });
       }
       this.setState({
@@ -112,9 +111,9 @@ class Reminder extends Component {
                 {this.state.items.map(item => {
                   return (
                     <li key={item.id}>
-                      <h3>{item.user}</h3>
+                      <h3>{item.title}</h3>
                       <p>
-                        Due by: {item.title + " at " + item.time}
+                        Due by: {item.date + " at " + item.time}
                         <br />
                         <br />
                         {item.description}
