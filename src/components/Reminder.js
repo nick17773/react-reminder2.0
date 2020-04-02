@@ -114,7 +114,7 @@ class Reminder extends Component {
                     <li key={item.id}>
                       <h3>{item.user}</h3>
                       <p>
-                        Due by: {item.title + item.time}
+                        Due by: {item.title + " at " + item.time}
                         <br />
                         <br />
                         {item.description}
