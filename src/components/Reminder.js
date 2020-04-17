@@ -102,7 +102,7 @@ class Reminder extends Component {
                 onChange={this.handleChange}
                 value={this.state.time}
               />
-              <p>Note: the date and time do not display as they have been inputted, they will be in yyyy/mm/dd and 24 hour format.</p>
+              <p>Please note: The date and time on the reminder will display in yyyy/mm/dd and 24 hour format.</p>
               <button>Add Item</button>
             </form>
           </section>

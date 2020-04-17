@@ -10,9 +10,9 @@ const About = () => {
       </header>
       <div className="container">
         <section className="add-item">
-          <p>This project aims to be a reminder app that is usable for students and really anyone at all. <br/>
+          <p>The aim of this project is to develop a reminder app to be used by students of other people to remember tasks. <br/>
           <br/>
-          Note: the date and time do not display as they have been inputted, they will be in yyyy/mm/dd and 24 hour format.
+          Please note: The date and time on the reminder will display in yyyy/mm/dd and 24 hour format.
           </p>
           
           
