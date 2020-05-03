@@ -9,7 +9,7 @@ import Error from "./components/Error";
 import Navigation from "./components/Navigation";
 import Reminder from "./components/Reminder";
 
-
+// This file routes the required pages for the navigation using the Browser router import/function.
 
 class App extends Component {
   render() {
