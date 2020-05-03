@@ -1,5 +1,5 @@
 import React from "react";
-
+// this file is for displaying the brief description of what the app is. 
 const About = () => {
   return (
     <div>

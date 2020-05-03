@@ -1,5 +1,5 @@
 import React from "react";
-
+// this file is for the error message that crops up when the page is non-existant.
 const Error = () => {
   return (
     <div className="add-item">

@@ -1,6 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-
+// this file is for the basic home page. 
 const home = () => {
     return (
        <div>

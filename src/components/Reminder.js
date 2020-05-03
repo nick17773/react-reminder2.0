@@ -3,6 +3,8 @@ import "./App.css";
 import firebase, { auth, provider } from "./firebase.js";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
+// this file has Heavily modified code that creates what is inputted on the page using firebase.
+
 class Reminder extends Component {
   constructor() {
     super();
@@ -62,7 +64,7 @@ class Reminder extends Component {
     const itemRef = firebase.database().ref(`/items/${itemId}`);
     itemRef.remove();
   }
-  render() {
+  render() { // this section renders the page, to show the inputs ETC. everything above this is handling the inputs.
     return (
       <div className="app">
         <header>
