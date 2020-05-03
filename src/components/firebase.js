@@ -1,3 +1,5 @@
+// this file is importing the necessary elements to make the app run using firebase.
+
 import firebase from 'firebase/app';
 import 'firebase/database';
 import 'firebase/storage';
