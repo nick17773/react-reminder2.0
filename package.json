@@ -1,7 +1,7 @@
 {
   "name": "react-reminder2",
   "version": "0.0.0",
-  "private": true,
+  "private": false,
   "dependencies": {
     "@firebase/app": "^0.6.2",
     "firebase": "7.14.2",
