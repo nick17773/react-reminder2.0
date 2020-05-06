@@ -1,7 +1,7 @@
 import React from 'react';
  
 import { NavLink } from 'react-router-dom';
-// this file uses the NavLink function to create the clickable links for my Nav bar.
+/* this file uses the NavLink function to create the clickable links for my Nav bar. */
 
 {/* The nav bar function */}
 const Navigation = () => {
