@@ -76,6 +76,7 @@ class Reminder extends Component {
           <section className="add-item">
             <form onSubmit={this.handleSubmit}>
               <p>What is your Reminder?</p>
+              {/* This input is for the title */}
               <input
                 type="text"
                 name="username"
@@ -83,7 +84,7 @@ class Reminder extends Component {
                 onChange={this.handleChange}
                 value={this.state.username}
               />
-
+              {/* This input is for the description */}
               <input
                 type="text"
                 name="description"
@@ -92,12 +93,14 @@ class Reminder extends Component {
                 value={this.state.description}
               />
               <p>When is it due?</p>
+              {/* This input is for date due */}
               <input
                 type="date"
                 name="currentItem"
                 onChange={this.handleChange}
                 value={this.state.currentItem}
               />
+              {/* This input is for time due */}
               <input
                 type="time"
                 name="time"
@@ -108,6 +111,7 @@ class Reminder extends Component {
               <button>Add Item</button>
             </form>
           </section>
+          {/* This section is for displaying the reminders */}
           <section className="display-item">
             <div className="wrapper">
               <ul>
