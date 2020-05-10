@@ -186,6 +186,14 @@ button {
     }
     header {
       min-width: 1vh;
+      max-width: 480px;
+      width: 50vh;
+    }
+    .display-item {
 
+      margin-left: 0.25vh;
+    }
+    .add-item {
+      margin-right: 0.25vh;
     }
 }
