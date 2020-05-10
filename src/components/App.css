@@ -82,6 +82,7 @@ header i {
   font-size: 1.66vh;
   display: flex;
   flex-flow: wrap, row;
+  max-height: 60vh;
 }
 
 .display-item {
@@ -190,10 +191,11 @@ button {
       width: 50vh;
     }
     .display-item {
-
+      width: 30vh;
       margin-left: 0.45vh;
     }
     .add-item {
       margin-right: 0.45vh;
+      max-height: 60vh;
     }
 }
