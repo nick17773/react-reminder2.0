@@ -183,4 +183,8 @@ button {
     .Nav a {
       font-size: 2vh;
     }
+    header {
+      min-width: 1vh;
+
+    }
 }
