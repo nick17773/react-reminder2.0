@@ -3,7 +3,7 @@ import React from "react";
 const Error = () => {
   return (
     <div className="add-item">
-      <p>Error: Page does not exist! Try a Different URL.</p>
+      <h1>Error 404: Page not found! Please try a different URL.</h1>
     </div>
   );
 };
