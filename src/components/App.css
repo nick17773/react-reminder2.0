@@ -181,7 +181,7 @@ button {
   font-size: 1.66vh;
   display: flex;
   flex-flow: wrap, row;
-  max-height: 60vh;
+  
   }
 
 @font-face {
